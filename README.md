@@ -1,6 +1,6 @@
 # ReactionWaiter
 
-The ReactionWaiter library is a simple yet lightweight library to improve the work with JDA and reactions.
+The ReactionWaiter library is a simple and lightweight library to improve the work with JDA and reactions.
 
 - Current Version: 1.0.0 <br>
 - JDA 4.1.0
