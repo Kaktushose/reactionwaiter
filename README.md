@@ -5,7 +5,7 @@ The ReactionWaiter library is a simple yet lightweight library to improve the wo
 - Current Version: 1.0.0 <br>
 - JDA 4.1.0
 - [Latest Release](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.0) <br>
-- [Documentation]()
+- [Documentation](https://kaktushose.github.io/reactionwaiter/)
 
 
 # Features
@@ -18,7 +18,7 @@ The ReactionWaiter library is a simple yet lightweight library to improve the wo
 # Add to your project
 
 ## Adding as a library
-You can download the .jar-file [here]() and add it to your project by doing the following steps:
+You can download the .jar-file [here](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.0) and add it to your project by doing the following steps:
 
 1. Create a new directory in your project folder
 2. Copy the jar-file into it
