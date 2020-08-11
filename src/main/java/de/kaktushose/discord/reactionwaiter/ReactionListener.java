@@ -33,7 +33,7 @@ public class ReactionListener extends ListenerAdapter {
     /**
      * Removes this listener from the active listeners of the JDA. This method has no real use case, but is available for the sake of completeness.
      *
-     * @param jda he JDA where the listener will be removed
+     * @param jda the JDA where the listener will be removed
      */
     public static void stopListening(JDA jda) {
         jda.removeEventListener(ReactionListener.class);

@@ -21,7 +21,7 @@ public class ReactionEvent extends GuildMessageReactionAddEvent {
     private final String emote;
 
     ReactionEvent(GuildMessageReactionAddEvent event, String emote) {
-        super(event.getJDA(), event.getResponseNumber(), event.getUser(), event.getReaction());
+        super(event.getJDA(), event.getResponseNumber(), event.getMember(), event.getReaction());
         this.emote = emote;
         this.executor = event.getMember();
 

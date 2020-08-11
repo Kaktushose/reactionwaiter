@@ -2,9 +2,9 @@
 
 The ReactionWaiter library is a simple and lightweight library to improve the work with JDA and reactions.
 
-- Current Version: 1.0.0 <br>
-- JDA 4.1.0
-- [Latest Release](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.0) <br>
+- Current Version: 1.0.1 <br>
+- JDA 4.1.1_165
+- [Latest Release](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.1) <br>
 - [Documentation](https://kaktushose.github.io/reactionwaiter/)
 
 
@@ -18,7 +18,7 @@ The ReactionWaiter library is a simple and lightweight library to improve the wo
 # Add to your project
 
 ## Adding as a library
-You can download the .jar-file [here](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.0) and add it to your project by doing the following steps:
+You can download the .jar-file [here](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.1) and add it to your project by doing the following steps:
 
 1. Create a new directory in your project folder
 2. Copy the jar-file into it
@@ -75,11 +75,11 @@ If you are too lazy to look up the unicode for an emoji you can also use the enu
 ReactionWaiter waiter = new ReactionWaiter(1234, EmoteType.THUMBSUP.unicode);
 ```
 
-That's it! We've implemented our first ReactionWaiter. Futher information on how to use this libary can be found in the [documentation]().
+That's it! We've implemented our first ReactionWaiter. Further information on how to use this library can be found in the [documentation]().
 
 # Contributing
 
-If you think that something is missing and you want to add it yourself, feel free to open a pull request. I recommend to open an issue first in order to avoid misunderstandings, e.g. you start working on feature I'm already planning to add.
+If you think that something is missing and you want to add it yourself, feel free to open a pull request. I recommend opening an issue first in order to avoid misunderstandings, e.g. you start working on a feature I'm already planning to add.
 Please note the following things:
 - Follow the Java conventions
 - Document your code
