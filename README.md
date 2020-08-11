@@ -27,7 +27,13 @@ IntelliJ: Right-click the jar: Add As Library
 4. Done. You can use it now.
 
 ## Maven
-not available yet
+```
+<dependency>
+  <groupId>de.kaktushose.discord.reactionwaiter</groupId>
+  <artifactId>reactionwaiter</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
 
 # Getting started
 
