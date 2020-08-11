@@ -53,7 +53,7 @@ public class ReactionListener extends ListenerAdapter {
         waiters.forEach(waiter -> waiter.getEmotes().forEach(emote -> {
             if (!emote.equals(event.getReactionEmote().getName())) return;
             if (!(waiter.getMessageId() == 0 || waiter.getMessageId() == event.getMessageIdLong())) return;
-            if (!(event.getMember().getIdLong() == 0) || event.getMember().getIdLong() == waiter.getMemberId())
+            if (event.getMember().getIdLong() != 0 || event.getMember().getIdLong() == waiter.getMemberId())
             waiter.called(new ReactionEvent(event, emote));
         }));
     }

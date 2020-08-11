@@ -11,6 +11,7 @@ package de.kaktushose.discord.reactionwaiter;
 
 public enum EmoteType {
 
+
     /**
      * Thumbs Up <br>
      * code point: U+1F44D
@@ -65,6 +66,11 @@ public enum EmoteType {
      */
     FLAG("\uD83D\uDEA9");
 
+    /**
+     * the escaped code point of the emote
+     */
+    public final String unicode;
+
     EmoteType(String unicode) {
         this.unicode = unicode;
     }
@@ -88,11 +94,6 @@ public enum EmoteType {
                 return null;
         }
     }
-
-    /**
-     * the escaped code point of the emote
-     */
-    public final String unicode;
 
 }
 
