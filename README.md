@@ -1,5 +1,7 @@
 # ReactionWaiter
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ebc3bcfec2c84b0c8c7fcc5a7e2f7b13)](https://app.codacy.com/manual/Kaktushose/reactionwaiter?utm_source=github.com&utm_medium=referral&utm_content=Kaktushose/reactionwaiter&utm_campaign=Badge_Grade_Dashboard)
+
 The ReactionWaiter library is a simple and lightweight library to improve the work with JDA and reactions.
 
 - Current Version: 1.0.1 <br>
