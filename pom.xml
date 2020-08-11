@@ -6,7 +6,15 @@
 
     <groupId>de.kaktushose.discord.reactionwaiter</groupId>
     <artifactId>reactionwaiter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Kaktushose/reactionwaiter</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
