@@ -27,7 +27,7 @@ IntelliJ: Right-click the jar: Add As Library
 4. Done. You can use it now.
 
 ## Maven
-```
+```xml
 <dependency>
   <groupId>de.kaktushose.discord.reactionwaiter</groupId>
   <artifactId>reactionwaiter</artifactId>
