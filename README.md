@@ -1,5 +1,9 @@
 # ReactionWaiter
 
+![Codacy](https://app.codacy.com/project/badge/Grade/2e43dbb063064e038a94fb9b8b46148f)
+[![Generic badge](https://img.shields.io/badge/Download-latest-green.svg)](https://github.com/Kaktushose/reactionwaiter/releases/tag/v.1.0.1)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 The ReactionWaiter library is a simple and lightweight library to improve the work with JDA and reactions.
 
 - Current Version: 1.0.1 <br>
@@ -10,7 +14,7 @@ The ReactionWaiter library is a simple and lightweight library to improve the wo
 
 # Features
 - Create "ReactionWaiters" that will execute code when specific reactions are added
-- easily give limitations, e.g. a specific user or message
+- easily give limitations, e.g. only listen to a specific user or message
 - activate and deactivate waiters as you like
 - high flexibility
 - easy usage
