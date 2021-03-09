@@ -88,7 +88,7 @@ ReactionWaiter waiter = new ReactionWaiter(message, "👍");
 
 // will be executed if a reaction event matches the message id and the given emoji
 waiter.onEvent(reactionEvent -> {
-  reactionEvent.respond("Hello World").queue();
+  reactionEvent.reply("Hello World");
 
   // deactivates the waiter again, since the reaction we have been waiting for was added
   waiter.stopWaiting();
