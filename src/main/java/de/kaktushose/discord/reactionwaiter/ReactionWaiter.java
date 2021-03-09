@@ -82,14 +82,13 @@ public class ReactionWaiter {
      * Additionally deactivates the reaction waiter after a given set of time. This method will also activate the waiter.
      *
      * @param consumer        the callback that will be called when a {@link ReactionEvent} got triggered
-     * @param removeReactions {@code true} if this method should also remove all reactions from the message
      * @param delay           the time from now to deactivate the waiter
      * @param timeUnit        the time unit of the delay parameter
      * @return the current instance to use fluent interface
      */
-    public ReactionWaiter onEvent(@Nonnull Consumer<ReactionEvent> consumer, boolean removeReactions, long delay, @Nonnull TimeUnit timeUnit) {
+    public ReactionWaiter onEvent(@Nonnull Consumer<ReactionEvent> consumer, long delay, @Nonnull TimeUnit timeUnit) {
         ReactionListener.addReactionWaiter(this);
-        ReactionListener.removeReactionWaiter(this, removeReactions, delay, timeUnit);
+        ReactionListener.removeReactionWaiter(this, delay, timeUnit);
         this.consumer = consumer;
         return this;
     }
@@ -101,20 +100,19 @@ public class ReactionWaiter {
      * @return the current instance to use fluent interface
      */
     public ReactionWaiter stopWaiting(boolean removeReactions) {
-        ReactionListener.removeReactionWaiter(this, removeReactions);
+        ReactionListener.removeReactionWaiter(this);
         return this;
     }
 
     /**
      * Deactivates the reaction waiter after a given set of time.
      *
-     * @param removeReactions {@code true} if this method should also remove all reactions from the message
      * @param delay           the time from now to deactivate the waiter
      * @param timeUnit        the time unit of the delay parameter
      * @return the current instance to use fluent interface
      */
-    public ReactionWaiter stopWaitingAfter(boolean removeReactions, long delay, @Nonnull TimeUnit timeUnit) {
-        ReactionListener.removeReactionWaiter(this, removeReactions, delay, timeUnit);
+    public ReactionWaiter stopWaitingAfter(long delay, @Nonnull TimeUnit timeUnit) {
+        ReactionListener.removeReactionWaiter(this, delay, timeUnit);
         return this;
     }
 
