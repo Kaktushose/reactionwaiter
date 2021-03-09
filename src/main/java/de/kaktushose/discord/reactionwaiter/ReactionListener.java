@@ -3,7 +3,6 @@ package de.kaktushose.discord.reactionwaiter;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.hooks.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -19,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * Make sure to activate the listener before using this library. Otherwise no {@code GuildMessageReactionAddEvent} will be tracked.
  *
  * @author Kaktushose
- * @version 1.1.0
+ * @version 2.0.0
  * @since 1.0.0
  */
 public class ReactionListener extends ListenerAdapter {
@@ -28,7 +27,7 @@ public class ReactionListener extends ListenerAdapter {
     private final static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private final static List<ReactionWaiter> waiters = new CopyOnWriteArrayList<>();
     private static boolean autoRemove = true;
-    private static boolean removeReactions;
+    private static boolean removeReactions = true;
     private static long delay = 5;
     private static TimeUnit timeUnit = TimeUnit.MINUTES;
 
@@ -38,7 +37,7 @@ public class ReactionListener extends ListenerAdapter {
      * @param jda he JDA with which the listener will be registered
      */
     public static void startListening(@Nonnull JDA jda) {
-        jda.addEventListener(ReactionListener.class);
+        jda.addEventListener(new ReactionListener());
     }
 
     /**
@@ -71,15 +70,6 @@ public class ReactionListener extends ListenerAdapter {
         ReactionListener.timeUnit = timeUnit;
     }
 
-    /**
-     * Set this to {@code true} if all reactions of a message should be removed when the waiter gets unregistered.
-     *
-     * @param removeReactions {@code true} if all reactions of a message should be removed
-     */
-    public void setRemoveReactions(boolean removeReactions) {
-        ReactionListener.removeReactions = removeReactions;
-    }
-
     static void addReactionWaiter(ReactionWaiter waiter) {
         waiters.add(waiter);
         if (autoRemove) {
@@ -91,17 +81,28 @@ public class ReactionListener extends ListenerAdapter {
         if (!waiters.remove(waiter)) {
             return;
         }
-        if (removeReactions) {
+        if (removeReactions && waiter.getMessage() != null) {
             waiter.getMessage().clearReactions().queue();
         }
     }
 
     static void removeReactionWaiter(ReactionWaiter waiter, long delay, TimeUnit timeUnit) {
-        scheduler.schedule(() -> removeReactionWaiter(waiter), delay, timeUnit);
+        scheduler.schedule(() -> {
+            removeReactionWaiter(waiter);
+        }, delay, timeUnit);
+    }
+
+    /**
+     * Set this to {@code true} if all reactions of a message should be removed when the waiter gets unregistered.
+     *
+     * @param removeReactions {@code true} if all reactions of a message should be removed
+     */
+    public void setRemoveReactions(boolean removeReactions) {
+        ReactionListener.removeReactions = removeReactions;
     }
 
     @Override
-    @SubscribeEvent
+
     public void onGuildMessageReactionAdd(@NotNull GuildMessageReactionAddEvent event) {
         if (event.getUser().isBot()) {
             return;
@@ -111,16 +112,12 @@ public class ReactionListener extends ListenerAdapter {
                 return;
             }
 
-            if (waiter.getMessage() != null) {
-                if (waiter.getMessage().getIdLong() != event.getMessageIdLong()) {
-                    return;
-                }
+            if ((waiter.getMessage() != null) && (waiter.getMessage().getIdLong() != event.getMessageIdLong())) {
+                return;
             }
 
-            if (waiter.getMember() != null) {
-                if (!waiter.getMember().equals(event.getMember())) {
-                    return;
-                }
+            if ((waiter.getMember() != null) && (!waiter.getMember().equals(event.getMember()))) {
+                return;
             }
 
             waiter.getConsumer().accept(new ReactionEvent(event, emote));

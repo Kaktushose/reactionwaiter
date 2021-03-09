@@ -81,9 +81,9 @@ public class ReactionWaiter {
      * This method gets invoked when a GuildMessageReactionAddEvent matches the specifications given by the used constructor.
      * Additionally deactivates the reaction waiter after a given set of time. This method will also activate the waiter.
      *
-     * @param consumer        the callback that will be called when a {@link ReactionEvent} got triggered
-     * @param delay           the time from now to deactivate the waiter
-     * @param timeUnit        the time unit of the delay parameter
+     * @param consumer the callback that will be called when a {@link ReactionEvent} got triggered
+     * @param delay    the time from now to deactivate the waiter
+     * @param timeUnit the time unit of the delay parameter
      * @return the current instance to use fluent interface
      */
     public ReactionWaiter onEvent(@Nonnull Consumer<ReactionEvent> consumer, long delay, @Nonnull TimeUnit timeUnit) {
@@ -107,8 +107,8 @@ public class ReactionWaiter {
     /**
      * Deactivates the reaction waiter after a given set of time.
      *
-     * @param delay           the time from now to deactivate the waiter
-     * @param timeUnit        the time unit of the delay parameter
+     * @param delay    the time from now to deactivate the waiter
+     * @param timeUnit the time unit of the delay parameter
      * @return the current instance to use fluent interface
      */
     public ReactionWaiter stopWaitingAfter(long delay, @Nonnull TimeUnit timeUnit) {

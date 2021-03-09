@@ -21,16 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  * <p>
- *
+ * <p>
  * This framework is build around the class {@link de.kaktushose.discord.reactionwaiter.ReactionWaiter}.<br>
  * It is used to create special listeners that will wait for reactions to be added. In doing so they will follow the restrictions defined by the constructor used.<br>
  * {@link de.kaktushose.discord.reactionwaiter.ReactionEvent} is a sub class of {@code GuildMessageReactionAddEvent} from JDA
  * and provides some extra utilities.<br>
  * {@link de.kaktushose.discord.reactionwaiter.ReactionListener} implements the {@code onGuildMessageReactionAdd} method from JDA.
  * It reviews all incoming {@code GuildMessageReactionAddEvent}s.<br>
- * {@link de.kaktushose.discord.reactionwaiter.Runnable} is a functional interface used in the {@link de.kaktushose.discord.reactionwaiter.ReactionWaiter#onEvent(de.kaktushose.discord.reactionwaiter.Runnable)}
- * method of {@link de.kaktushose.discord.reactionwaiter.ReactionWaiter}.<br>
  * {@link de.kaktushose.discord.reactionwaiter.EmoteType} is an enum with some emotes that might be frequently used. It can be used instead of the {@code Emote} from JDA.
- *
-*/
+ */
 package de.kaktushose.discord.reactionwaiter;
