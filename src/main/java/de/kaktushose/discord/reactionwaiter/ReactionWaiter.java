@@ -100,7 +100,7 @@ public class ReactionWaiter {
      * @return the current instance to use fluent interface
      */
     public ReactionWaiter stopWaiting(boolean removeReactions) {
-        ReactionListener.removeReactionWaiter(this);
+        ReactionListener.removeReactionWaiter(this, removeReactions);
         return this;
     }
 

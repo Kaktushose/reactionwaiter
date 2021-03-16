@@ -77,7 +77,7 @@ public class ReactionListener extends ListenerAdapter {
         }
     }
 
-    static void removeReactionWaiter(ReactionWaiter waiter) {
+    static void removeReactionWaiter(ReactionWaiter waiter, boolean removeReactions) {
         if (!waiters.remove(waiter)) {
             return;
         }
@@ -88,7 +88,7 @@ public class ReactionListener extends ListenerAdapter {
 
     static void removeReactionWaiter(ReactionWaiter waiter, long delay, TimeUnit timeUnit) {
         scheduler.schedule(() -> {
-            removeReactionWaiter(waiter);
+            removeReactionWaiter(waiter, removeReactions);
         }, delay, timeUnit);
     }
 
