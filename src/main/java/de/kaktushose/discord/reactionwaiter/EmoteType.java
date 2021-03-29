@@ -44,61 +44,61 @@ public enum EmoteType {
      * Digit 0 <br>
      * code point: U+0030
      */
-    ZERO("\u0030"),
+    ZERO("0️⃣"),
 
     /**
      * Digit 1 <br>
      * code point: U+0031
      */
-    ONE("\u0031"),
+    ONE("1️⃣"),
 
     /**
      * Digit 2 <br>
      * code point: U+0032
      */
-    TWO("\u0032"),
+    TWO("2️⃣"),
 
     /**
      * Digit 3 <br>
      * code point: U+0033
      */
-    THREE("\u0033"),
+    THREE("3️⃣"),
 
     /**
      * Digit 4 <br>
      * code point: U+0034
      */
-    FOUR("\u0034"),
+    FOUR("4️⃣"),
 
     /**
      * Digit 5 <br>
      * code point: U+0035
      */
-    FIVE("\u0035"),
+    FIVE(" ️⃣"),
 
     /**
      * Digit 6 <br>
      * code point: U+0036
      */
-    SIX("\u0036"),
+    SIX("6️⃣"),
 
     /**
      * Digit 7 <br>
      * code point: U+0037
      */
-    SEVEN("\u0037"),
+    SEVEN("7️⃣"),
 
     /**
      * Digit 8 <br>
      * code point: U+0038
      */
-    EIGHT("\u0038"),
+    EIGHT("8️⃣"),
 
     /**
      * Digit 9 <br>
      * code point: U+0039
      */
-    NINE("\u0039"),
+    NINE("9️⃣"),
 
     /**
      * Triangular flag on post <br>
