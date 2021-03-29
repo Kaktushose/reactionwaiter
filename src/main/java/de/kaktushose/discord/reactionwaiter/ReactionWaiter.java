@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.Message;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -40,6 +41,17 @@ public class ReactionWaiter {
     }
 
     /**
+     * This constructor creates a reaction waiter that will accept the given emotes, all messages and all users
+     *
+     * @param emotes the emotes that will be listened for
+     */
+    public ReactionWaiter(@Nonnull Collection<String> emotes) {
+        this.emotes = new HashSet<>(emotes);
+        this.message = null;
+        this.member = null;
+    }
+
+    /**
      * This constructor creates a reaction waiter that will accept the given emotes and all users but is limited to a specific message.
      *
      * @param message the message that will be monitored
@@ -47,6 +59,18 @@ public class ReactionWaiter {
      */
     public ReactionWaiter(@Nullable Message message, @Nonnull String... emotes) {
         this.emotes = new HashSet<>(Arrays.asList(emotes));
+        this.message = message;
+        this.member = null;
+    }
+
+    /**
+     * This constructor creates a reaction waiter that will accept the given emotes and all users but is limited to a specific message.
+     *
+     * @param message the message that will be monitored
+     * @param emotes  the emotes that will be listened for
+     */
+    public ReactionWaiter(@Nullable Message message, @Nonnull Collection<String> emotes) {
+        this.emotes = new HashSet<>(emotes);
         this.message = message;
         this.member = null;
     }
@@ -60,6 +84,19 @@ public class ReactionWaiter {
      */
     public ReactionWaiter(@Nullable Message message, @Nullable Member member, @Nonnull String... emotes) {
         this.emotes = new HashSet<>(Arrays.asList(emotes));
+        this.message = message;
+        this.member = member;
+    }
+
+    /**
+     * This constructor creates a reaction waiter that will accept the given emotes and is limited to a specific message and user.
+     *
+     * @param member  the member that will be accepted
+     * @param message the message that will be monitored
+     * @param emotes  the emotes that will be listened for
+     */
+    public ReactionWaiter(@Nullable Message message, @Nullable Member member, Collection<String> emotes) {
+        this.emotes = new HashSet<>(emotes);
         this.message = message;
         this.member = member;
     }
