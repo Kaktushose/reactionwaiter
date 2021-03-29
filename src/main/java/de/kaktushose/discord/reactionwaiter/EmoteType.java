@@ -74,7 +74,7 @@ public enum EmoteType {
      * Digit 5 <br>
      * code point: U+0035
      */
-    FIVE(" ️⃣"),
+    FIVE("5️⃣"),
 
     /**
      * Digit 6 <br>
